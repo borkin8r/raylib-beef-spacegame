@@ -1,0 +1,122 @@
+FileVersion = 1
+LastConfig = "Debug"
+LastPlatform = "Win64"
+RecentFilesList = ["g:\\BeefLang\\Samples\\SpaceGame\\src\\GameApp.bf", "g:\\BeefLang\\Samples\\SpaceGame\\src\\Program.bf"]
+
+[MainWindow]
+X = 544
+Y = 131
+Width = 1632
+Height = 1224
+ShowKind = "Normal"
+
+[MainDockingFrame]
+Type = "DockingFrame"
+SplitType = 2
+
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 400.0
+RequestedHeight = 250.0
+SizePriority = 250.0
+Type = "DockingFrame"
+SplitType = 1
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 250.0
+RequestedHeight = 250.0
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Workspace"
+TabWidth = 91.2
+Type = "ProjectPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+IsFillWidget = true
+Permanent = true
+RequestedWidth = 150.0
+RequestedHeight = 150.0
+SizePriority = 1.0
+DefaultDocumentsTabbedView = true
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "GameApp.bf"
+TabWidth = 108.8
+Type = "SourceViewPanel"
+FilePath = "g:\\BeefLang\\Samples\\SpaceGame\\src\\GameApp.bf"
+CursorPos = 52
+ProjectName = "SpaceGame"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Program.bf"
+TabWidth = 102.4
+Type = "SourceViewPanel"
+FilePath = "g:\\BeefLang\\Samples\\SpaceGame\\src\\Program.bf"
+CursorPos = 632
+ProjectName = "SpaceGame"
+
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 312.0
+RequestedHeight = 312.0
+Type = "DockingFrame"
+SplitType = 1
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 312.0
+RequestedHeight = 312.0
+SizePriority = 1612.0
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Memory"
+TabWidth = 120.0
+Type = "MemoryPanel"
+AutoResize = "Auto_Mul8"
+RequestedWidth = 300.0
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Watch"
+TabWidth = 120.0
+Type = "WatchPanel"
+Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Auto"
+TabWidth = 120.0
+Type = "AutoWatchPanel"
+Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 312.0
+RequestedHeight = 312.0
+SizePriority = 1612.0
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Threads"
+TabWidth = 120.0
+Type = "ThreadPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Call Stack"
+TabWidth = 120.0
+Type = "CallStackPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Immediate"
+TabWidth = 149.6
+Type = "ImmediatePanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Output"
+TabWidth = 149.6
+Type = "OutputPanel"
+
+[DebuggerDisplayTypes.""]
+IntDisplayType = "Default"
+MmDisplayType = "Default"
