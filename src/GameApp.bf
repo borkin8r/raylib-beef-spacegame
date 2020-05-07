@@ -1,6 +1,7 @@
 using System;
 using raylib_beef;
 using raylib_beef.Types;
+using raylib_beef.Enums;
 using System.Collections;
 
 namespace SpaceGame
@@ -22,6 +23,8 @@ namespace SpaceGame
 		int mEmptyUpdates;
 		bool mHasMoved;
 		bool mHasShot;
+		const int SCREENWIDTH = 1024;
+		const int SCREENHEIGHT = 768;
 
 		public this()
 		{
@@ -35,13 +38,14 @@ namespace SpaceGame
 
 		public ~this()
 		{
-			Images.Dispose();
+			Textures.Dispose();
 			Sounds.Dispose();
 		}
 
 		public void Init()
 		{
-			Images.Init();
+			InitWindow(SCREENWIDTH, SCREENHEIGHT, "raylibeef Space Game!");
+			Textures.Init();
 			Sounds.Init();
 			
 			mFont = LoadFontEx("zorque.ttf", 24, null, 250);
@@ -60,8 +64,8 @@ namespace SpaceGame
 
 		public void Draw()
 		{
-			Draw(Images.sSpaceImage, 0, mBkgPos - 1024);
-			Draw(Images.sSpaceImage, 0, mBkgPos);
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.WHITE);	 //can't use float?
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.WHITE);
 
 			for (var entity in mEntities)
 				entity.Draw();
@@ -69,7 +73,7 @@ namespace SpaceGame
 			DrawString(8, 4, scope String()..AppendF("SCORE: {}", mScore), .(64, 255, 64, 255));
 
 			if ((!mHasMoved) || (!mHasShot))
-				DrawString(mWidth / 2, 200, "Use cursor keys to move and Space to fire", .(255, 255, 255, 255), true);
+				DrawString(SCREENWIDTH / 2, 200, "Use cursor keys to move and Space to fire", .(255, 255, 255, 255), true);
 		}
 
 		public void ExplodeAt(float x, float y, float sizeScale, float speedScale)
@@ -92,25 +96,25 @@ namespace SpaceGame
 			float deltaX = 0;
 			float deltaY = 0;
 			float moveSpeed = Hero.cMoveSpeed;
-			if (IsKeyDown(.Left))
+			if (IsKeyDown(.KEY_LEFT))
 				deltaX -= moveSpeed;
-			if (IsKeyDown(.Right))
+			if (IsKeyDown(.KEY_RIGHT))
 				deltaX += moveSpeed;
 
-			if (IsKeyDown(.Up))
+			if (IsKeyDown(.KEY_UP))
 				deltaY -= moveSpeed;
-			if (IsKeyDown(.Down))
+			if (IsKeyDown(.KEY_DOWN))
 				deltaY += moveSpeed;
 
 			if ((deltaX != 0) || (deltaY != 0))
 			{
-				mHero.mX = Math.Clamp(mHero.mX + deltaX, 10, mWidth - 10);
-				mHero.mY = Math.Clamp(mHero.mY + deltaY, 10, mHeight - 10);
+				mHero.mX = Math.Clamp(mHero.mX + deltaX, 10, SCREENWIDTH - 10);
+				mHero.mY = Math.Clamp(mHero.mY + deltaY, 10, SCREENHEIGHT - 10);
 				mHasMoved = true;
 			}
 			mHero.mIsMovingX = deltaX != 0;
 
-			if ((IsKeyDown(.Space)) && (mHero.mShootDelay == 0))
+			if ((IsKeyDown(.KEY_SPACE)) && (mHero.mShootDelay == 0))
 			{
 				mHasShot = true;
 				mHero.mShootDelay = Hero.cShootDelay;
@@ -126,14 +130,14 @@ namespace SpaceGame
 		{
 			let spawner = new EnemySkirmisher.Spawner();
 			spawner.mLeftSide = mRand.NextDouble() < 0.5;
-			spawner.mY = ((float)mRand.NextDouble() * 0.5f + 0.25f) * mHeight;
+			spawner.mY = ((float)mRand.NextDouble() * 0.5f + 0.25f) * SCREENHEIGHT;
 			AddEntity(spawner);
 		}
 
 		void SpawnGoliath()
 		{
 			let enemy = new EnemyGolaith();
-			enemy.mX = ((float)mRand.NextDouble() * 0.5f + 0.25f) * mWidth;
+			enemy.mX = ((float)mRand.NextDouble() * 0.5f + 0.25f) * SCREENWIDTH;
 			enemy.mY = -300;
 			AddEntity(enemy);
 		}
