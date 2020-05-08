@@ -18,6 +18,7 @@ namespace SpaceGame
 		public static void Dispose()
 		{
 		//	ClearAndDeleteItems(sSounds);
+		// TODO: unload sounds?
 		}
 
 		public static Result<Sound> Load(StringView fileName)
@@ -29,6 +30,7 @@ namespace SpaceGame
 
 		public static Result<void> Init()
 		{
+			GameApp.InitAudioDevice();
 			sBeepMed = Try!(Load("sounds/beep_med.wav"));
 			sBeepHigh = Try!(Load("sounds/beep_high.wav"));
 			sBeepHighLong = Try!(Load("sounds/beep_high_long.wav"));

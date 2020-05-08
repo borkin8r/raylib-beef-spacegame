@@ -30,6 +30,7 @@ namespace SpaceGame
 		public static void Dispose()
 		{
 			//ClearAndDeleteItems(sTextures);
+			// TODO: unload textures?
 		}
 
 		public static Result<void> Init()
