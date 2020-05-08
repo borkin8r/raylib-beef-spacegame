@@ -1,10 +1,10 @@
-using SDL2;
+using raylib_beef.Types;
 
 namespace SpaceGame
 {
 	class Enemy : Entity
 	{
 		public int mHealth;
-		public SDL.Rect mBoundingBox;
+		public Rectangle mBoundingBox;
 	}
 }
