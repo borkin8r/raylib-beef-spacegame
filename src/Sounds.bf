@@ -1,6 +1,5 @@
 using System;
 using raylib_beef.Types;
-using raylib_beef;
 using System.Collections;
 
 namespace SpaceGame
@@ -18,12 +17,12 @@ namespace SpaceGame
 
 		public static void Dispose()
 		{
-			ClearAndDeleteItems(sSounds);
+		//	ClearAndDeleteItems(sSounds);
 		}
 
 		public static Result<Sound> Load(StringView fileName)
 		{
-			Sound sound = Raylib.LoadSound(fileName.ToScopeCStr!()); //TODO: check for failure? need delete?
+			Sound sound = GameApp.LoadSound(fileName.ToScopeCStr!()); //TODO: check for failure? need delete?
 			sSounds.Add(sound);
 			return sound;
 		}

@@ -1,6 +1,4 @@
 using System;
-using raylib_beef;
-using raylib_beef.Types;
 
 namespace SpaceGame
 {
@@ -65,7 +63,7 @@ namespace SpaceGame
 				if (mStateTick % 6 == 0)
 				{
 					gGameApp.ExplodeAt(mX + (float)gGameApp.mRand.NextDoubleSigned() * 40, mY + (float)gGameApp.mRand.NextDoubleSigned() * 40, 1.0f, 0.4f);
-					Raylib.PlaySound(Sounds.sExplode);
+					GameApp.PlaySound(Sounds.sExplode);
 				}
 				mAlpha = Math.Max(0.0f, mAlpha - 0.015f);
 				if (mAlpha <= 0)
@@ -75,7 +73,7 @@ namespace SpaceGame
 
 		public override void Draw()
 		{
-			Raylib.DrawTexture(Textures.sEnemyGoliath, (.)mX - 63, (.)mY - 168, .(255, 255, 255, (.)(255 * mAlpha)));
+			GameApp.DrawTexture(Textures.sEnemyGoliath, (.)mX - 63, (.)mY - 168, .(255, 255, 255, (.)(255 * mAlpha)));
 		}
 	}
 }

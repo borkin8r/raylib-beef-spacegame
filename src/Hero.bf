@@ -1,4 +1,3 @@
-using raylib_beef;
 using raylib_beef.Types;
 
 namespace SpaceGame
@@ -37,7 +36,7 @@ namespace SpaceGame
 				destRect.width -= inset * 2;
 			}
 
-			Raylib.DrawTextureRec(texture, srcRect, .((int32)x, (int32)y), Color.BLANK);
+			GameApp.DrawTextureRec(texture, srcRect, .((int32)x, (int32)y), Color.BLANK);
 		}
 
 		public override void Update()
@@ -59,7 +58,7 @@ namespace SpaceGame
 			if (mHealth < 0)
 			{
 				gGameApp.ExplodeAt(mX, mY, 1.0f, 0.5f);
-				Raylib.PlaySound(Sounds.sExplode);
+				GameApp.PlaySound(Sounds.sExplode);
 				gGameApp.mDifficulty = 0;
 
 				mHealth = 1;

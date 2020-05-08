@@ -1,3 +1,5 @@
+using raylib_beef.Types;
+
 namespace SpaceGame
 {
 	class HeroBullet : Entity
@@ -12,13 +14,13 @@ namespace SpaceGame
 			{
 				if (let enemy = entity as Enemy)
 				{
-					if ((enemy.mBoundingBox.Contains((.)(mX - entity.mX), (.)(mY - entity.mY))) && (enemy.mHealth > 0))
+					if (GameApp.CheckCollisionPointRec(.((mX - entity.mX), (mY - entity.mY)), enemy.mBoundingBox) && (enemy.mHealth > 0))
 					{
 						mIsDeleting = true;
 						enemy.mHealth--;
 						
 						gGameApp.ExplodeAt(mX, mY, 0.25f, 1.25f);
-						gGameApp.PlaySound(Sounds.sExplode, 0.5f, 1.5f);
+						GameApp.PlaySound(Sounds.sExplode);
 
 						break;
 					}
@@ -28,7 +30,7 @@ namespace SpaceGame
 
 		public override void Draw()
 		{
-			gGameApp.Draw(Images.sHeroLaser, mX - 8, mY - 9);
+			GameApp.DrawTexture(Textures.sHeroLaser, (.)mX - 8, (.)mY - 9, Color.WHITE);
 		}
 	}
 }

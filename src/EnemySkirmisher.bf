@@ -1,4 +1,5 @@
 using System;
+using raylib_beef.Types;
 
 namespace SpaceGame
 {
@@ -22,7 +23,7 @@ namespace SpaceGame
 					}
 					else
 					{
-						enemy.mX = gGameApp.mWidth + 24;
+						enemy.mX = GameApp.SCREENWIDTH + 24;
 						enemy.mRot = (float)-Math.PI_d;
 						enemy.mRotAdd = 0.001f + (float)gGameApp.mRand.NextDouble() * 0.001f;
 					}
@@ -58,7 +59,7 @@ namespace SpaceGame
 			if (mHealth <= 0)
 			{
 				gGameApp.ExplodeAt(mX, mY, 0.6f, 1.2f);
-				gGameApp.PlaySound(Sounds.sExplode, 0.7f, 1.2f);
+				GameApp.PlaySound(Sounds.sExplode);
 				gGameApp.mScore += 50;
 				mIsDeleting = true;
 			}
@@ -77,7 +78,7 @@ namespace SpaceGame
 		public override void Draw()
 		{
 			//using (g.PushRotate(mRot + (float)Math.PI_d/2))
-			gGameApp.Draw(Images.sEnemySkirmisher, mX - 21, mY - 16);
+			GameApp.DrawTexture(Textures.sEnemySkirmisher, (.)mX - 21, (.)mY - 16, Color.WHITE);
 		}
 	}
 }

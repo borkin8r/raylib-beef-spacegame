@@ -1,3 +1,5 @@
+using raylib_beef.Types;
+
 namespace SpaceGame
 {
 	class EnemyLaser : EnemyProjectile
@@ -18,7 +20,7 @@ namespace SpaceGame
 
 		public override void Draw()
 		{
-			gGameApp.Draw(Images.sEnemyLaser, mX - 10, mY - 13);
+			GameApp.DrawTexture(Textures.sEnemyLaser, (.)mX - 10, (.)mY - 13, Color.WHITE);
 		}
 	}
 }

@@ -1,6 +1,5 @@
 using System;
 using raylib_beef.Types;
-using raylib_beef;
 using System.Collections;
 
 namespace SpaceGame
@@ -23,14 +22,14 @@ namespace SpaceGame
 
 		public static Result<Texture2D> Load(StringView fileName)
 		{
-			Texture2D Texture = Raylib.LoadTexture(fileName.ToScopeCStr!()); //TODO: check for failure?	need delete?
+			Texture2D Texture = GameApp.LoadTexture(fileName.ToScopeCStr!()); //TODO: check for failure?	need delete?
 			sTextures.Add(Texture);
 			return Texture;
 		}
 
 		public static void Dispose()
 		{
-			ClearAndDeleteItems(sTextures);
+			//ClearAndDeleteItems(sTextures);
 		}
 
 		public static Result<void> Init()
