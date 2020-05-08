@@ -1,4 +1,5 @@
-using SDL2;
+using raylib_beef;
+using raylib_beef.Types;
 
 namespace SpaceGame
 {
@@ -24,19 +25,19 @@ namespace SpaceGame
 
 			float x = mX - 29;
 			float y = mY - 41;
-			Image image = Images.sHero;
+			Texture2D texture = Textures.sHero;
 
-			SDL.Rect srcRect = .(0, 0, image.mSurface.w, image.mSurface.h);
-			SDL.Rect destRect = .((int32)x, (int32)y, image.mSurface.w, image.mSurface.h);
+			Rectangle srcRect = .(0, 0, texture.width, texture.height);
+			Rectangle destRect = .((int32)x, (int32)y, texture.width, texture.height);
 
 			if (mIsMovingX)
 			{
-				int32 inset = (.)(srcRect.w * 0.09f);
+				int32 inset = (.)(srcRect.width * 0.09f);
 				destRect.x += inset;
-				destRect.w -= inset * 2;
+				destRect.width -= inset * 2;
 			}
 
-			SDL.RenderCopy(gGameApp.mRenderer, image.mTexture, &srcRect, &destRect);
+			Raylib.DrawTextureRec(texture, srcRect, .((int32)x, (int32)y), Color.BLANK);
 		}
 
 		public override void Update()
@@ -58,7 +59,7 @@ namespace SpaceGame
 			if (mHealth < 0)
 			{
 				gGameApp.ExplodeAt(mX, mY, 1.0f, 0.5f);
-				gGameApp.PlaySound(Sounds.sExplode, 1.2f, 0.6f);
+				Raylib.PlaySound(Sounds.sExplode);
 				gGameApp.mDifficulty = 0;
 
 				mHealth = 1;
