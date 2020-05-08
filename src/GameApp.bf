@@ -64,8 +64,9 @@ namespace SpaceGame
 
 		public void Draw()
 		{
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.WHITE);	 //can't use float?
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.WHITE);
+			BeginDrawing();
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.BLANK);	 //can't use float?
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.BLANK);
 
 			for (var entity in mEntities)
 				entity.Draw();
@@ -74,6 +75,7 @@ namespace SpaceGame
 
 			if ((!mHasMoved) || (!mHasShot))
 				DrawString(SCREENWIDTH / 2, 200, "Use cursor keys to move and Space to fire", .(255, 255, 255, 255), true);
+			EndDrawing();
 		}
 
 		public void ExplodeAt(float x, float y, float sizeScale, float speedScale)
@@ -122,7 +124,7 @@ namespace SpaceGame
 				bullet.mX = mHero.mX;
 				bullet.mY = mHero.mY - 50;
 				AddEntity(bullet);
-				PlaySound(Sounds.sLaser, 0.1f);
+				PlaySound(Sounds.sLaser);
 			}
 		}
 

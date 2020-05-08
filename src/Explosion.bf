@@ -1,4 +1,5 @@
-using SDL2;
+using raylib_beef.Types;
+using raylib_beef;
 
 namespace SpaceGame
 {
@@ -26,13 +27,13 @@ namespace SpaceGame
 			//using (g.PushScale(mSizeScale, mSizeScale))
 			//gGameApp.Draw(Images.sExplosion[Frame / 6, Frame % 6], -64, -64);
 
-			let image = Images.sExplosionImage;
+			let texture = Textures.sExplosionTexture;
 			float x = mX - (65 * mSizeScale);
 			float y = mY - (65 * mSizeScale);
 
-			SDL.Rect srcRect = .((Frame % 6) * 130, (Frame / 6) * 130, 130, 130);
-			SDL.Rect destRect = .((int32)x, (int32)y, (int32)(mSizeScale * 130), (int32)(mSizeScale * 130));
-			SDL.RenderCopy(gGameApp.mRenderer, image.mTexture, &srcRect, &destRect);
+			Rectangle srcRect = .((Frame % 6) * 130, (Frame / 6) * 130, 130, 130);
+			Rectangle destRect = .((int32)x, (int32)y, (int32)(mSizeScale * 130), (int32)(mSizeScale * 130));
+			Raylib.DrawTexturePro(texture, srcRect, destRect, .(x, y), 0, Color.BLANK);
 		}
 	}
 }

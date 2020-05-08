@@ -1,5 +1,6 @@
 using System;
-using SDL2;
+using raylib_beef.Types;
+using raylib_beef;
 using System.Collections;
 
 namespace SpaceGame
@@ -22,12 +23,7 @@ namespace SpaceGame
 
 		public static Result<Sound> Load(StringView fileName)
 		{
-			Sound sound = new Sound();
-			if (sound.Load(fileName) case .Err)
-			{
-				delete sound;
-				return .Err;
-			}
+			Sound sound = Raylib.LoadSound(fileName.ToScopeCStr!()); //TODO: check for failure? need delete?
 			sSounds.Add(sound);
 			return sound;
 		}
