@@ -23,8 +23,8 @@ namespace SpaceGame
 		int mEmptyUpdates;
 		bool mHasMoved;
 		bool mHasShot;
-		const int SCREENWIDTH = 1024;
-		const int SCREENHEIGHT = 768;
+		public const int SCREENWIDTH = 1024;
+		public const int SCREENHEIGHT = 768;
 
 		public this()
 		{

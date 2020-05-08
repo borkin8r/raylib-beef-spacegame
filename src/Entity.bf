@@ -9,8 +9,8 @@ namespace SpaceGame
 		
 		public bool IsOffscreen(float marginX, float marginY)
 		{
-			return ((mX < -marginX) || (mX >= gGameApp.mWidth + marginX) ||
-				(mY < -marginY) || (mY >= gGameApp.mHeight + marginY));
+			return ((mX < -marginX) || (mX >= GameApp.SCREENWIDTH + marginX) ||
+				(mY < -marginY) || (mY >= GameApp.SCREENHEIGHT + marginY));
 		}
 
 		public virtual void Update()
