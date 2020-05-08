@@ -65,8 +65,8 @@ namespace SpaceGame
 		public void Draw()
 		{
 			BeginDrawing();
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.BLANK);	 //can't use float?
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.BLANK);
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.WHITE);	 //can't use float?
+			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.WHITE);
 
 			for (var entity in mEntities)
 				entity.Draw();

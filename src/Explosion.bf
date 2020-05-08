@@ -33,7 +33,7 @@ namespace SpaceGame
 
 			Rectangle srcRect = .((Frame % 6) * 130, (Frame / 6) * 130, 130, 130);
 			Rectangle destRect = .((int32)x, (int32)y, (int32)(mSizeScale * 130), (int32)(mSizeScale * 130));
-			Raylib.DrawTexturePro(texture, srcRect, destRect, .(x, y), 0, Color.BLANK);
+			Raylib.DrawTexturePro(texture, srcRect, destRect, .(x, y), 0, Color.WHITE);
 		}
 	}
 }

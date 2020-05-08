@@ -75,7 +75,7 @@ namespace SpaceGame
 
 		public override void Draw()
 		{
-			Raylib.DrawTexture(Textures.sEnemyGoliath, (.)mX - 63, (.)mY - 168, .(0, 0, 0, (.)(255 * mAlpha)));
+			Raylib.DrawTexture(Textures.sEnemyGoliath, (.)mX - 63, (.)mY - 168, .(255, 255, 255, (.)(255 * mAlpha)));
 		}
 	}
 }
