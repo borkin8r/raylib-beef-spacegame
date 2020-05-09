@@ -3,7 +3,6 @@ Dependencies = {corlib = "*", corlib = "*", raylib-beef = "*"}
 
 [Project]
 Name = "SpaceGame"
-TargetType = "BeefGUIApplication"
 StartupObject = "SpaceGame.Program"
 
 [Configs.Debug.Win64]

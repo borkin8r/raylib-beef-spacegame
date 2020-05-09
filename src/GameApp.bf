@@ -39,15 +39,16 @@ namespace SpaceGame
 		public ~this()
 		{
 			Textures.Dispose();
-			Sounds.Dispose();
+			Sounds.Dispose();		   
 		}
 
 		public void Init()
 		{
 			InitWindow(SCREENWIDTH, SCREENHEIGHT, "raylibeef Space Game!");
+			// SetTargetFPS call after init, before loading texture.
+			SetTargetFPS(60); // also include example of timer setup?
 			Textures.Init();
 			Sounds.Init();
-			
 			mFont = LoadFontEx("zorque.ttf", 24, null, 250);
 		}
 
@@ -65,8 +66,8 @@ namespace SpaceGame
 		public void Draw()
 		{
 			BeginDrawing();
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos - 1024, Color.WHITE);	 //can't use float?
-			DrawTexture(Textures.sSpaceTexture, 0, (int) mBkgPos, Color.WHITE);
+			DrawTexture(Textures.sSpaceTexture, 0, (.) mBkgPos - 1024, Color.WHITE);	 //can't use float?
+			DrawTexture(Textures.sSpaceTexture, 0, (.) mBkgPos, Color.WHITE);
 
 			for (var entity in mEntities)
 				entity.Draw();
@@ -193,7 +194,7 @@ namespace SpaceGame
 		}
 
 		public void Run() {
-			SetTargetFPS(60); // also include example of timer setup?
+			
 
 			while(!WindowShouldClose()) {
 				HandleInputs();
