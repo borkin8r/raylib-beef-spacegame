@@ -1,11 +1,11 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win64"
-RecentFilesList = ["g:\\Projects\\raylib-SpaceGame\\src\\GameApp.bf", "g:\\BeefLang\\BeefLibs\\raylib-beef\\src\\Raylib.bf", "g:\\Projects\\raylib-SpaceGame\\src\\Textures.bf", "g:\\BeefLang\\BeefLibs\\corlib\\src\\String.bf"]
+RecentFilesList = ["g:\\Projects\\raylib-SpaceGame\\src\\Textures.bf", "g:\\Projects\\raylib-SpaceGame\\src\\GameApp.bf", "g:\\Projects\\raylib-SpaceGame\\src\\Program.bf", "g:\\BeefLang\\BeefLibs\\raylib-beef\\src\\Raylib.bf", "g:\\BeefLang\\BeefLibs\\corlib\\src\\String.bf"]
 
 [MainWindow]
-X = 1092
-Y = 105
+X = 1100
+Y = 157
 Width = 1200
 Height = 1024
 ShowKind = "Normal"
@@ -42,6 +42,13 @@ DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Program.bf"
+TabWidth = 102.4194
+Type = "SourceViewPanel"
+FilePath = "g:\\Projects\\raylib-SpaceGame\\src\\Program.bf"
+ProjectName = "SpaceGame"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "String.bf"
 TabWidth = 77.58064
 Type = "SourceViewPanel"
@@ -51,22 +58,22 @@ VertPos = 59375.0
 ProjectName = "corlib"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
 TabLabel = "Textures.bf"
 TabWidth = 89.67741
 Type = "SourceViewPanel"
 FilePath = "g:\\Projects\\raylib-SpaceGame\\src\\Textures.bf"
-CursorPos = 1012
+CursorPos = 1483
 VertPos = 456.0
 ProjectName = "SpaceGame"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
 TabLabel = "GameApp.bf"
 TabWidth = 99.35484
 Type = "SourceViewPanel"
 FilePath = "g:\\Projects\\raylib-SpaceGame\\src\\GameApp.bf"
-CursorPos = 703
-VertPos = 483.5904
+CursorPos = 4360
+VertPos = 1004.163
 ProjectName = "SpaceGame"
 
 [[MainDockingFrame.DockedWidgets]]

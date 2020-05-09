@@ -36,7 +36,7 @@ namespace SpaceGame
 				destRect.width -= inset * 2;
 			}
 
-			GameApp.DrawTextureRec(texture, srcRect, .((int32)x, (int32)y), Color.BLANK);
+			GameApp.DrawTextureRec(texture, srcRect, .((int32)x, (int32)y), Color.WHITE);
 		}
 
 		public override void Update()

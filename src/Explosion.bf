@@ -31,8 +31,8 @@ namespace SpaceGame
 			float y = mY - (65 * mSizeScale);
 
 			Rectangle srcRect = .((Frame % 6) * 130, (Frame / 6) * 130, 130, 130);
-			Rectangle destRect = .((int32)x, (int32)y, (int32)(mSizeScale * 130), (int32)(mSizeScale * 130));
-			GameApp.DrawTexturePro(texture, srcRect, destRect, .(x, y), 0, Color.WHITE);
+			Rectangle destRect = .(x, y, (mSizeScale * 130), (mSizeScale * 130));
+			GameApp.DrawTexturePro(texture, srcRect, destRect, .(0, 0), 0, Color.WHITE);
 		}
 	}
 }

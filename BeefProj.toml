@@ -8,6 +8,7 @@ StartupObject = "SpaceGame.Program"
 [Configs.Debug.Win64]
 TargetDirectory = "$(WorkspaceDir)/dist"
 TargetName = "$(ProjectName)_d"
+DebugWorkingDirectory = "$(ProjectDir)/dist"
 
 [Configs.Release.Win64]
 TargetDirectory = "$(WorkspaceDir)/dist"

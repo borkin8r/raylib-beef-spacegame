@@ -29,11 +29,6 @@ namespace SpaceGame
 		public this()
 		{
 			gGameApp = this;
-
-			mHero = new Hero();
-			AddEntity(mHero);
-			mHero.mY = 650;
-			mHero.mX = 512;
 		}
 
 		public ~this()
@@ -50,6 +45,7 @@ namespace SpaceGame
 			Textures.Init();
 			Sounds.Init();
 			mFont = LoadFontEx("zorque.ttf", 24, null, 250);
+			SpawnHero();
 		}
 
 		public void DrawString(float x, float y, String str, Color color, bool centerX = false)
@@ -127,6 +123,14 @@ namespace SpaceGame
 				AddEntity(bullet);
 				PlaySound(Sounds.sLaser);
 			}
+		}
+
+		void SpawnHero()
+		{
+			mHero = new Hero();
+			AddEntity(mHero);
+			mHero.mY = 650;
+			mHero.mX = 512;
 		}
 
 		void SpawnSkirmisher()
