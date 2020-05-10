@@ -115,7 +115,7 @@ namespace SpaceGame
 			}
 			mHero.mIsMovingX = deltaX != 0;
 
-			if ((IsKeyDown(.KEY_SPACE)) && (mHero.mShootDelay == 0))
+			if ((IsKeyDown(.KEY_SPACE)) && (mHero.mShootDelay == 0))  //TODO multiplier for not missing
 			{
 				mHasShot = true;
 				mHero.mShootDelay = Hero.cShootDelay;
