@@ -64,6 +64,7 @@ namespace SpaceGame
 				mHealth = 1;
 				mReviveDelay = 100;
 				mInvincibleDelay = 100;
+				gGameApp.mHighScore = gGameApp.mScore;
 			}
 		}
 	}

@@ -16,6 +16,7 @@ namespace SpaceGame
 		public List<Entity> mEntities = new List<Entity>() ~ DeleteContainerAndItems!(_);
 		public Hero mHero;
 		public int mScore;
+		public int mHighScore;
 		public float mDifficulty;
 		public Random mRand = new Random() ~ delete _;
 		Font mFont;
@@ -69,6 +70,7 @@ namespace SpaceGame
 				entity.Draw();
 
 			DrawString(8, 4, scope String()..AppendF("SCORE: {}", mScore), .(64, 255, 64, 255));
+			DrawString(8, 24, scope String()..AppendF("HIGHSCORE: {}", mHighScore), .(64, 255, 64, 255));
 
 			if ((!mHasMoved) || (!mHasShot))
 				DrawString(SCREENWIDTH / 2, 200, "Use cursor keys to move and Space to fire", .(255, 255, 255, 255), true);
