@@ -1,4 +1,5 @@
 build/
+BeefSpace_User.toml
 *.exe
 *.pdb
 *.exe.build.txt
