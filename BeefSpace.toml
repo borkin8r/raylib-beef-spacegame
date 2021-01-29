@@ -1,6 +1,5 @@
 FileVersion = 1
-Projects = {SpaceGame = {Path = "."}, SDL2 = "*"}
-Unlocked = ["SDL2"]
+Projects = {SpaceGame = {Path = "."}, raylib-beef = "*"}
 
 [Workspace]
 StartupProject = "SpaceGame"

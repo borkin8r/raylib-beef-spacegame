@@ -69,8 +69,8 @@ namespace SpaceGame
 			for (var entity in mEntities)
 				entity.Draw();
 
-			DrawString(8, 4, scope String()..AppendF("SCORE: {}", mScore), .(64, 255, 64, 255));
-			DrawString(8, 24, scope String()..AppendF("HIGHSCORE: {}", mHighScore), .(64, 255, 64, 255));
+			DrawString(8, 24, scope String()..AppendF("SCORE: {}", mScore), .(64, 255, 64, 255));
+			DrawString(8, 4, scope String()..AppendF("HIGHSCORE: {}", mHighScore), .(64, 255, 64, 255));
 
 			if ((!mHasMoved) || (!mHasShot))
 				DrawString(SCREENWIDTH / 2, 200, "Use cursor keys to move and Space to fire", .(255, 255, 255, 255), true);
